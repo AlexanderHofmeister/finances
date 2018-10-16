@@ -4,28 +4,33 @@ import org.apache.commons.lang3.StringUtils;
 
 public enum Category implements LabeledEnum {
 
-  INSURANCE,
+	INSURANCE,
 
-  FOOD,
+	FOOD,
 
-  EXT_FOOD,
+	EXT_FOOD,
 
-  BEATUY,
+	BEATUY,
 
-  HOUSEHOLD,
+	HOUSEHOLD,
 
-  CLOTH,
+	CLOTH,
 
-  MOBILITY,
+	MOBILITY,
 
-  SPARETIME,
+	SPARETIME,
 
-  SPORT,
+	SPORT,
 
-  RENT;
+	RENT;
 
-  @Override
-  public String getLabel() {
-    return StringUtils.capitalize(name().toLowerCase());
-  }
+	@Override
+	public String getLabel() {
+		return StringUtils.capitalize(this.name().toLowerCase());
+	}
+
+	@Override
+	public String toString() {
+		return this.getLabel();
+	}
 }

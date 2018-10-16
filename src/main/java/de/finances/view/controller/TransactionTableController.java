@@ -17,15 +17,13 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.Pane;
+import lombok.Getter;
 
-public class FinancesOverviewController implements Initializable {
-
-	@FXML
-	private Pane entityPane;
+public class TransactionTableController implements Initializable {
 
 	@FXML
-	private TableView<Transaction> transactions;
+	@Getter
+	private TableView<Transaction> transactionTable;
 
 	@FXML
 	private TableColumn<Transaction, Integer> columnDay;
@@ -56,7 +54,7 @@ public class FinancesOverviewController implements Initializable {
 		this.month.setItems(
 				FXCollections.observableArrayList(this.transactionService.findAllUsesdMonth(this.year.getValue())));
 		this.year.setItems(FXCollections.observableArrayList(this.transactionService.findAllUsesdYears()));
-		this.transactions.setItems(FXCollections.observableArrayList(
+		this.transactionTable.setItems(FXCollections.observableArrayList(
 				this.transactionService.getTransactionsByMonthAndYear(this.year.getValue(), this.month.getValue())));
 
 		this.columnDay.setCellValueFactory(p -> new ReadOnlyObjectWrapper<>(p.getValue().getCreated().getDayOfMonth()));

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="financesOverviewPane" maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0"
+	prefWidth="1350.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8"
+	xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.finances.view.controller.TransactionOverviewController">
+	<children>
+		<HBox layoutY="100.0" prefHeight="845.0" prefWidth="1350.0">
+			<Pane fx:id="entityPane" prefHeight="845.0" prefWidth="1400.0">
+				<children>
+					<fx:include prefHeight="845.0" prefWidth="595.0"
+						source="transactionTable.fxml" />
+				</children>
+			</Pane>
+		</HBox>
+	</children>
+</Pane>

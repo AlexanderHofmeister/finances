@@ -12,20 +12,20 @@ public class MainController {
 	@FXML
 	private Pane mainPane;
 
+	public void exitApplication() {
+		Platform.exit();
+	}
+
 	private void loadEntityOverview(final String name) throws IOException {
 		final FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getClassLoader().getResource("fxml/" + name + ".fxml"));
+		loader.setLocation(this.getClass().getClassLoader().getResource("fxml/" + name + ".fxml"));
 		final Pane pane = (Pane) loader.load();
 		this.mainPane.getChildren().clear();
 		this.mainPane.getChildren().add(pane);
 	}
 
 	public void showFinances() throws IOException {
-		loadEntityOverview("financesOverview");
-	}
-
-	public void exitApplication() {
-		Platform.exit();
+		this.loadEntityOverview("transactionOverview");
 	}
 
 }

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="entityPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.finances.view.controller.TransactionEditController">
+	<children>
+		<VBox prefHeight="800.0" prefWidth="1400.0" spacing="25.0">
+			<children>
+				<Label fx:id="heading" prefHeight="49.0" prefWidth="1399.0" text="heading">
+					<font>
+						<Font name="System Bold" size="27.0" />
+					</font>
+					<padding>
+						<Insets left="10.0" top="10.0" />
+					</padding>
+				</Label>
+            <HBox spacing="20.0">
+               <children>
+                  <TextField fx:id="label" promptText="Label" />
+                  <ComboBox fx:id="category" prefWidth="150.0" promptText="Category" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="84.0" spacing="20.0">
+               <children>
+                  <TextField fx:id="value" promptText="Value" />
+                  <DatePicker fx:id="date" promptText="Date" />
+               </children>
+            </HBox>
+
+				<HBox minHeight="-Infinity" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+					<children>
+						<Button fx:id="cancel" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" styleClass="cancelButton" text="Abbrechen" />
+						<Button fx:id="save" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" styleClass="saveButton" text="Speichern" />
+					</children>
+				</HBox>
+			</children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+		</VBox>
+	</children>
+</Pane>
