@@ -26,8 +26,8 @@
 .table-view .column-header .label {
     -fx-text-fill: white;
     -fx-font-weight: bold;
-     -fx-alignment: center-left;
-      -fx-padding: 10.0;
+    -fx-alignment: center-left;
+    -fx-padding: 10.0;
 }
 
 .table-view {
