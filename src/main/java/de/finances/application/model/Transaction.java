@@ -21,30 +21,29 @@ import lombok.ToString;
 @AllArgsConstructor
 @Entity
 @NamedQueries(value = {
-    @NamedQuery(name = Transaction.TRANSACTION_BY_MONTH, query = "SELECT t FROM Transaction t WHERE t.created BETWEEN :start AND :end"),
-    @NamedQuery(name = Transaction.FIND_ALL_MONTH,
-            query = "SELECT DISTINCT t.created FROM Transaction t where t.created  BETWEEN :start and :end ORDER BY t.created"),
-    @NamedQuery(name = Transaction.FIND_ALL_YEARS, query = "SELECT DISTINCT t.created FROM Transaction t ORDER BY t.created") })
+		@NamedQuery(name = Transaction.TRANSACTION_BY_MONTH, query = "SELECT t FROM Transaction t WHERE t.created BETWEEN :start AND :end ORDER BY t.created"),
+		@NamedQuery(name = Transaction.FIND_ALL_MONTH, query = "SELECT DISTINCT t.created FROM Transaction t where t.created  BETWEEN :start and :end ORDER BY t.created"),
+		@NamedQuery(name = Transaction.FIND_ALL_YEARS, query = "SELECT DISTINCT t.created FROM Transaction t ORDER BY t.created") })
 @ToString
 public class Transaction extends BaseEntity {
 
-  private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-  public static final String TRANSACTION_BY_MONTH = "transactionByMonth";
+	public static final String TRANSACTION_BY_MONTH = "transactionByMonth";
 
-  public static final String FIND_ALL_MONTH = "findAllMonth";
+	public static final String FIND_ALL_MONTH = "findAllMonth";
 
-  public static final String FIND_ALL_YEARS = "findAllYears";
+	public static final String FIND_ALL_YEARS = "findAllYears";
 
-  private String label;
+	private String label;
 
-  @Enumerated(EnumType.STRING)
-  private Category category;
+	@Enumerated(EnumType.STRING)
+	private Category category;
 
-  private LocalDate created;
+	private LocalDate created;
 
-  private BigDecimal value = BigDecimal.ZERO;
+	private BigDecimal value = BigDecimal.ZERO;
 
-  private TransactionType type;
+	private TransactionType type;
 
 }
