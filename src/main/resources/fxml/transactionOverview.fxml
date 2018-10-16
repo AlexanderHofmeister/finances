@@ -12,18 +12,32 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="financesOverviewPane" maxHeight="-Infinity" maxWidth="-Infinity"
-	minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0"
-	prefWidth="1350.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8"
-	xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.finances.view.controller.TransactionOverviewController">
+<Pane fx:id="financesOverviewPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1350.0" style="-fx-background-color: white;" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.finances.view.controller.TransactionOverviewController">
 	<children>
-		<HBox layoutY="100.0" prefHeight="845.0" prefWidth="1350.0">
-			<Pane fx:id="entityPane" prefHeight="845.0" prefWidth="1400.0">
-				<children>
-					<fx:include prefHeight="845.0" prefWidth="595.0"
-						source="transactionTable.fxml" />
-				</children>
-			</Pane>
-		</HBox>
+      <VBox prefHeight="843.0" prefWidth="1350.0">
+         <children>
+            <HBox maxHeight="85.0" prefHeight="85.0" prefWidth="100.0" spacing="20.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#createIncome" prefHeight="35.0" prefWidth="100.0" styleClass="income" text="Income" />
+                  <Button mnemonicParsing="false" onAction="#createExpense" prefHeight="35.0" prefWidth="100.0" styleClass="expense" text="Expense" />
+               </children>
+               <opaqueInsets>
+                  <Insets top="20.0" />
+               </opaqueInsets>
+            </HBox>
+      		<HBox layoutY="100.0" prefHeight="746.0" prefWidth="1330.0">
+         <children>
+         			<Pane fx:id="entityPane" prefHeight="661.0" prefWidth="1330.0">
+         				<children>
+         					<fx:include prefHeight="845.0" prefWidth="595.0" source="transactionTable.fxml" />
+         				</children>
+         			</Pane>
+         </children>
+      		</HBox>
+         </children>
+         <padding>
+            <Insets left="20.0" top="20.0" />
+         </padding>
+      </VBox>
 	</children>
 </Pane>

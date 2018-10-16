@@ -15,9 +15,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="entityPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.finances.view.controller.TransactionEditController">
+<Pane fx:id="entityPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.finances.view.controller.TransactionEditController">
 	<children>
-		<VBox prefHeight="800.0" prefWidth="1400.0" spacing="25.0">
+		<VBox prefHeight="800.0" prefWidth="1000.0" spacing="25.0">
 			<children>
 				<Label fx:id="heading" prefHeight="49.0" prefWidth="1399.0" text="heading">
 					<font>
@@ -27,18 +27,18 @@
 						<Insets left="10.0" top="10.0" />
 					</padding>
 				</Label>
-            <HBox spacing="20.0">
+            <HBox prefHeight="65.0" prefWidth="827.0" spacing="20.0">
                <children>
-                  <TextField fx:id="label" promptText="Label" />
-                  <ComboBox fx:id="category" prefWidth="150.0" promptText="Category" />
+      				<TextField fx:id="label" promptText="Label" />
+      						<ComboBox fx:id="category" promptText="Category" />
                </children>
             </HBox>
-            <HBox layoutX="10.0" layoutY="84.0" spacing="20.0">
-               <children>
-                  <TextField fx:id="value" promptText="Value" />
-                  <DatePicker fx:id="date" promptText="Date" />
-               </children>
-            </HBox>
+				<HBox layoutX="10.0" layoutY="84.0" spacing="20.0">
+					<children>
+						<TextField fx:id="value" promptText="Value" />
+						<DatePicker fx:id="date" promptText="Date" />
+					</children>
+				</HBox>
 
 				<HBox minHeight="-Infinity" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
 					<children>
@@ -47,9 +47,9 @@
 					</children>
 				</HBox>
 			</children>
-         <padding>
-            <Insets left="20.0" />
-         </padding>
+			<padding>
+				<Insets left="20.0" />
+			</padding>
 		</VBox>
 	</children>
 </Pane>

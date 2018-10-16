@@ -20,7 +20,7 @@
 	xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.finances.view.controller.MainController">
 	<top>
 		<HBox fillHeight="false" minHeight="-Infinity" minWidth="-Infinity"
-			prefHeight="51.0" prefWidth="908.0" styleClass="sidebar" stylesheets="@../css/style.css">
+			prefHeight="51.0" prefWidth="908.0" styleClass="sidebar">
 			<children>
 				<Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0"
 					style="-fx-background-color: #969696" text="Finances" textFill="WHITE">

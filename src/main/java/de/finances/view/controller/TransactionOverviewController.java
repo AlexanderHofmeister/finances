@@ -5,9 +5,11 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import de.finances.application.model.Transaction;
+import de.finances.application.model.TransactionType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.Pane;
@@ -16,6 +18,12 @@ public class TransactionOverviewController implements Initializable {
 
 	@FXML
 	private Pane entityPane;
+
+	@FXML
+	private Button createExpenseButton;
+
+	@FXML
+	private Button createIncomeButton;
 
 	private void buildTransactionEdit(final Transaction item) {
 
@@ -42,6 +50,20 @@ public class TransactionOverviewController implements Initializable {
 		this.entityPane.getChildren().clear();
 		this.entityPane.getChildren().add(editPane);
 
+	}
+
+	public void createExpense() {
+		this.createTransaction(TransactionType.EXPENSE);
+	}
+
+	public void createIncome() {
+		this.createTransaction(TransactionType.INCOME);
+	}
+
+	private void createTransaction(final TransactionType expense) {
+		final Transaction item = new Transaction();
+		item.setType(expense);
+		this.buildTransactionEdit(item);
 	}
 
 	@Override

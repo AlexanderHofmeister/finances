@@ -12,31 +12,22 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-	minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" stylesheets="@../css/style.css"
-	xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="de.finances.view.controller.TransactionTableController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.finances.view.controller.TransactionTableController">
 	<children>
-		<VBox fillWidth="false" prefHeight="800.0" prefWidth="824.0"
-			spacing="20.0">
+		<VBox fillWidth="false" prefHeight="800.0" prefWidth="824.0" spacing="20.0">
 			<children>
 				<HBox spacing="20.0">
 					<children>
 						<ComboBox fx:id="month" prefWidth="150.0" />
-						<ComboBox fx:id="year" layoutX="10.0" layoutY="210.0"
-							prefWidth="150.0" />
+						<ComboBox fx:id="year" layoutX="10.0" layoutY="210.0" prefWidth="150.0" />
 					</children>
 				</HBox>
-				<TableView fx:id="transactionTable" layoutX="38.0"
-					layoutY="145.0" prefHeight="790.0" prefWidth="800.0">
+				<TableView fx:id="transactionTable" layoutX="38.0" layoutY="145.0" prefHeight="790.0" prefWidth="800.0">
 					<columns>
 						<TableColumn fx:id="columnDay" prefWidth="200.0" text="Day" />
-						<TableColumn fx:id="columnLabel" minWidth="5.0"
-							prefWidth="200.0" text="Label" />
-						<TableColumn fx:id="columnCategory" prefWidth="200.0"
-							text="Category" />
-						<TableColumn fx:id="columnValue" prefWidth="200.0"
-							text="Value" />
+						<TableColumn fx:id="columnLabel" minWidth="5.0" prefWidth="200.0" text="Label" />
+						<TableColumn fx:id="columnCategory" prefWidth="200.0" text="Category" />
+						<TableColumn fx:id="columnValue" prefWidth="200.0" text="Value" />
 					</columns>
 				</TableView>
 			</children>
@@ -44,7 +35,7 @@
 				<Insets />
 			</opaqueInsets>
 			<padding>
-				<Insets bottom="20.0" left="20.0" top="20.0" />
+				<Insets bottom="20.0" />
 			</padding>
 		</VBox>
 	</children>
