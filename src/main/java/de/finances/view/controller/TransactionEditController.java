@@ -54,8 +54,9 @@ public class TransactionEditController {
 	public void setTransaction(final Transaction transaction) {
 		this.transaction = transaction;
 		this.category.setItems(FXCollections.observableArrayList(Category.values()));
-		this.heading.setText(
-				transaction.isNew() ? "Transaction anlegen" : "Transaction " + transaction.getLabel() + " bearbeiten");
+
+		this.heading.setText(transaction.isNew() ? "Create " + transaction.getType()
+				: "Edit " + transaction.getType() + " " + transaction.getLabel());
 		this.label.setText(transaction.getLabel());
 		this.value.setText(transaction.getValue().toString());
 		this.date.setValue(transaction.getCreated());

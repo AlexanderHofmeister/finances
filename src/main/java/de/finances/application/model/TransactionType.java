@@ -1,9 +1,15 @@
 package de.finances.application.model;
 
+import org.apache.commons.lang3.StringUtils;
+
 public enum TransactionType {
 
-  INCOME,
+	INCOME,
 
-  EXPENSE;
+	EXPENSE;
 
+	@Override
+	public String toString() {
+		return StringUtils.capitalize(this.name().toLowerCase());
+	}
 }
