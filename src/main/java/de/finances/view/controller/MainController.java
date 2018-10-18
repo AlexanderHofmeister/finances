@@ -40,4 +40,8 @@ public class MainController implements Initializable {
 		this.loadEntityOverview("transactionOverview");
 	}
 
+	public void showStatistics() throws IOException {
+		this.loadEntityOverview("statisticsOverview");
+	}
+
 }
