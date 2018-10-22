@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="financesOverviewPane" maxHeight="-Infinity" maxWidth="-Infinity"
+<Pane fx:id="entityPane" maxHeight="-Infinity" maxWidth="-Infinity"
 	minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0"
 	prefWidth="1350.0" style="-fx-background-color: white;" stylesheets="@../css/styles.css"
 	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"

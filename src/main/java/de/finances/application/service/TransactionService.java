@@ -39,7 +39,7 @@ public class TransactionService extends AbstractEntityService<Transaction> {
 	}
 
 	public List<Transaction> getTransactionsByMonthAndYear(final int year, final Month month) {
-		// the day is not interested, just use 1 as dummy
+		// the day is not interesting, just use 1 as dummy
 		final LocalDate initial = LocalDate.of(year, month, 1);
 		return this.findWithNamedQuery(Transaction.TRANSACTION_BY_MONTH,
 				QueryParameter.with("start", initial.withDayOfMonth(1))

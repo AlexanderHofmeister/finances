@@ -1,5 +1,6 @@
 package de.finances.view.controller;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.time.Month;
@@ -14,8 +15,10 @@ import de.finances.application.model.Transaction;
 import de.finances.application.model.TransactionType;
 import de.finances.application.service.TransactionService;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
@@ -45,8 +48,36 @@ public class StatisticsOverviewController implements Initializable {
 	@FXML
 	public TableColumn<MonthOverView, BigDecimal> profitColumn;
 
+	private void buildTransactionEdit(final Transaction item) {
+
+	}
+
 	@Override
 	public void initialize(final URL location, final ResourceBundle resources) {
+
+		this.monthOverviewTable.setRowFactory(tv -> {
+			final TableRow<MonthOverView> row = new TableRow<>();
+			row.setOnMouseClicked(event -> {
+				if (event.getClickCount() == 2 && !row.isEmpty()) {
+					final FXMLLoader loader = new FXMLLoader();
+					loader.setLocation(this.getClass().getClassLoader().getResource("fxml/monthOverview.fxml"));
+					Pane editPane = null;
+					try {
+						editPane = (Pane) loader.load();
+					} catch (final IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					final MonthOverviewController controller = loader.getController();
+					controller.setMonthOverview(row.getItem());
+
+					this.entityPane.getChildren().clear();
+					this.entityPane.getChildren().add(editPane);
+
+				}
+			});
+			return row;
+		});
 
 		this.yearColumn.setCellValueFactory(new PropertyValueFactory<MonthOverView, Integer>("year"));
 		this.monthColumn.setCellValueFactory(new PropertyValueFactory<MonthOverView, Month>("month"));
