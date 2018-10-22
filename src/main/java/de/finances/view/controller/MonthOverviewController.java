@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 import de.finances.application.model.Category;
 import de.finances.application.model.MonthOverView;
 import de.finances.application.model.Transaction;
+import de.finances.application.model.TransactionType;
 import de.finances.application.service.TransactionService;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
@@ -42,7 +43,7 @@ public class MonthOverviewController implements Initializable {
 	public void setMonthOverview(final MonthOverView monthOverView) {
 		final List<Pair<Category, BigDecimal>> expensesByCategory = this.transactionService
 				.getTransactionsByMonthAndYear(monthOverView.getYear(), monthOverView.getMonth()).stream()
-				.filter(t -> t.getCategory() != null)
+				.filter(t -> t.getType() == TransactionType.EXPENSE && t.getCategory() != null)
 				.collect(Collectors.groupingBy(Transaction::getCategory,
 						Collectors.reducing(BigDecimal.ZERO, Transaction::getValue, BigDecimal::add)))
 				.entrySet().stream().map(entry -> new Pair<>(entry.getKey(), entry.getValue()))
